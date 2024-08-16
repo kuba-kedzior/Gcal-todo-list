@@ -40,13 +40,13 @@ def get_events():
 
         # Call the Calendar API
         now = datetime.datetime.utcnow().isoformat() + "Z"  # 'Z' indicates UTC time
-        print("Getting the upcoming 10 events")
+        print("Getting the upcoming calendar data")
         events_result = (
             service.events()
             .list(
                 calendarId="primary",
                 timeMin=now,
-                maxResults=1000,
+                maxResults=200,
                 singleEvents=True,
                 orderBy="startTime",
             )
